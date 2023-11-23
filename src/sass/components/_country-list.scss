@@ -1,0 +1,52 @@
+@use '../globals/variables' as *;
+@use '../globals/config' as *;
+
+
+.country-list{
+
+  @include flexbox(
+    $flex-flow: row wrap, 
+    $flex: false, 
+    $justify-content: center, 
+    $align-items: false, 
+    $gap: var(--space-l));
+
+  margin: var(--space-l);
+  
+    &__item {
+    @include flexbox($flex-flow: column, $flex: false, $justify-content: false, $align-items: false, $gap: false);
+    font-size: var(--fs-500);
+    letter-spacing: var(--ls-xl);
+    width: max(35ch, 15%);
+    border-radius: var(--br-none) var(--br-none) var(--br-s) var(--br-s);
+    background-color: var(--clr-bg-neutral-light);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.05);
+    }
+
+    &__flag {
+    width: 100%;  // for browsers that do not support aspect-ratio
+    aspect-ratio: 1.75;
+    object-fit: cover;
+    border-radius: var(--br-s) var(--br-s) var(--br-none) var(--br-none);
+    }
+  
+    &__data {
+      @include flexbox($flex-flow: column, $flex: false, $justify-content: flex-end, $align-items: false, $gap: false);;
+      padding-inline: var(--space-m);
+      padding-block-start: var(--space-m);
+      padding-block-end: var(--space-l);
+
+      &--bold {
+        font-weight: var(--fw-600);
+      }
+    }
+  
+    &__name {
+      font-size: var(--fs-600);
+      font-weight: var(--fw-600);
+      line-height: var(--lh-xxs);
+      padding-block-end: var(--space-m)
+    }
+}
+

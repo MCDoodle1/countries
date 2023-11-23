@@ -1,0 +1,22 @@
+@use './variables' as *;
+@use './config' as *;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,900&display=swap");
+
+
+body {
+    font-family: $font-family;
+    font-size: var(--fs-400);
+    line-height: var(--lh-xl);
+  }
+
+.search-filter__wrapper {
+  @include flexbox(
+    $flex-flow: row wrap, 
+    $flex: false, 
+    $justify-content: false, 
+    $align-items: false, 
+    $gap: 0 var(--space-5xl));
+  margin-inline: var(--space-m);
+}
+
+  

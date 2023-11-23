@@ -1,0 +1,47 @@
+@use '../globals/variables' as *;
+
+.light {
+    background-color: var(--clr-bg-neutral-medium);
+    color: var(--clr-txt-primary-dark);
+  }
+.dark {
+    background-color: var(--clr-bg-primary-medium);
+    color: var(--clr-txt-neutral-light);
+  }
+
+:is(
+  .country-list__item, 
+  .header, 
+  .search-bar, 
+  .filter,
+  .filter__options, 
+  .detail, 
+  .detail__button, 
+  .detail__border-name).light {
+  background-color: var(--clr-bg-neutral-light);
+}
+
+:is(
+  .search-bar,
+  .filter,
+  .filter__options).light {
+    color: var(--clr-txt-neutral-dark)
+  }
+
+:is(
+  .country-list__item, 
+  .header, 
+  .search-bar, 
+  .filter,
+  .filter__options,
+  .detail__button, 
+  .detail__border-name).dark {
+  background-color: var(--clr-bg-primary-light);
+}
+
+:is(
+.detail,
+.detail__wrapper).dark {
+  background-color: var(--clr-bg-primary-medium);
+}
+

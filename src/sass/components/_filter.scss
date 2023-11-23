@@ -1,0 +1,46 @@
+@use '../globals/variables' as *;
+@use '../globals/config' as *;
+
+
+.filter {
+    @include flexbox($align-items: center, $gap: var(--space-m));
+    font-size: var(--fs-500);
+    font-weight: var(--fw-600);
+    margin-block-start: var(--space-xl);
+    padding: var(--space-m);
+    border-radius: var(--br-m);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.05);
+
+    &__select {
+        position: relative;
+        width: 15rem; 
+        
+        &.active .filter__options {
+            display: block;
+        }
+    }
+        
+    &__select-trigger {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  
+    &__options {
+        position: absolute;
+        top: 200%;
+        left: calc(-1 * var(--space-m));
+        width: calc(100% + (2 * var(--space-m))) ;
+        padding: var(--space-m);
+        border-radius: var(--br-m);
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.05);
+        display: none;
+    }
+  
+    &__option {
+        cursor: pointer;
+    }
+}
+
+

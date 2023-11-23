@@ -1,0 +1,451 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,900&display=swap");
+:root {
+  --fs-100: clamp(0.31rem, 0.01vw + 0.3rem, 0.32rem);
+  --fs-200: clamp(0.38rem, 0.05vw + 0.36rem, 0.42rem);
+  --fs-300: clamp(0.48rem, 0.11vw + 0.44rem, 0.56rem);
+  --fs-400: clamp(0.6rem, 0.2vw + 0.52rem, 0.75rem);
+  --fs-500: clamp(0.75rem, 0.33vw + 0.63rem, 1rem);
+  --fs-600: clamp(0.94rem, 0.53vw + 0.74rem, 1.33rem);
+  --fs-700: clamp(1.17rem, 0.81vw + 0.87rem, 1.78rem);
+  --fs-800: clamp(1.46rem, 1.2vw + 1.01rem, 2.37rem);
+  --fs-900: clamp(1.83rem, 1.77vw + 1.17rem, 3.16rem);
+  --fw-100: 100;
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+  --lh-3xs: 1;
+  --lh-xxs: 1.125;
+  --lh-xs: 1.25;
+  --lh-s: 1.375;
+  --lh-m: 1.5;
+  --lh-l: 1.625;
+  --lh-xl: 1.75;
+  --lh-xxl: 1.875;
+  --lh-3xl: 2;
+  --ls-xs: -0.05em;
+  --ls-s: -0.025em;
+  --ls-m: 0;
+  --ls-l: 0.025em;
+  --ls-xl: 0.05em;
+  --ls-xxl: 0.1em;
+  --clr-bg-primary-dark: hsl(200, 15%, 8%);
+  --clr-bg-primary-medium: hsl(207, 26%, 17%);
+  --clr-bg-primary-light: hsl(209, 23%, 22%);
+  --clr-bg-neutral-dark: hsl(0, 0%, 52%);
+  --clr-bg-neutral-medium: hsl(0, 0%, 98%);
+  --clr-bg-neutral-light: white;
+  --clr-txt-primary-dark: hsl(200, 15%, 8%);
+  --clr-txt-primary-medium: hsl(207, 26%, 17%);
+  --clr-txt-primary-light: hsl(209, 23%, 22%);
+  --clr-txt-neutral-dark: hsl(0, 0%, 52%);
+  --clr-txt-neutral-medium: hsl(0, 0%, 98%);
+  --clr-txt-neutral-light: white;
+  --clr-border-primary-dark: hsl(200, 15%, 8%);
+  --clr-border-primary-medium: hsl(207, 26%, 17%);
+  --clr-border-primary-light: hsl(209, 23%, 22%);
+  --clr-border-neutral-dark: hsl(0, 0%, 52%);
+  --clr-border-neutral-medium: hsl(0, 0%, 98%);
+  --clr-border-neutral-light: white;
+  --space-xxs: calc(0.1 * (8px + 1.5625vw));
+  --space-xs: calc(0.25 * (8px + 1.5625vw));
+  --space-s: calc(0.5 * (8px + 1.5625vw));
+  --space-m: calc(8px + 1.5625vw);
+  --space-l: calc(1.5 * (8px + 1.5625vw));
+  --space-xl: calc(2 * (8px + 1.5625vw));
+  --space-xxl: calc(3 * (8px + 1.5625vw));
+  --space-3xl: calc(4 * (8px + 1.5625vw));
+  --space-4xl: calc(6 * (8px + 1.5625vw));
+  --space-5xl: calc(8 * (8px + 1.5625vw));
+  --measure-compact: 20ch;
+  --measure-medium: 35ch;
+  --measure-longform: 65ch;
+  --br-xxs: 0.125rem;
+  --br-xs: 0.25rem;
+  --br-s: 0.375rem;
+  --br-m: 0.5rem;
+  --br-l: 0.75rem;
+  --br-xl: 1rem;
+  --br-xxl: 1.5rem;
+  --br-none: 0rem;
+  --br-full: 100%;
+}
+
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Fix mobile Safari increase font-size on landscape mode */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: var(--fs-400);
+  line-height: var(--lh-xl);
+}
+
+.search-filter__wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  flex: false;
+  justify-content: false;
+  align-items: false;
+  gap: 0 var(--space-5xl);
+  margin-inline: var(--space-m);
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  flex: false;
+  justify-content: space-between;
+  align-items: false;
+  gap: false;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-900);
+  letter-spacing: var(--ls-m);
+  background-color: var(--clr-bg-neutral-light);
+  padding: var(--space-l);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+.header__button {
+  display: flex;
+  flex-flow: false;
+  flex: false;
+  justify-content: false;
+  align-items: center;
+  gap: var(--space-s);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-600);
+}
+
+.country-list {
+  display: flex;
+  flex-flow: row wrap;
+  flex: false;
+  justify-content: center;
+  align-items: false;
+  gap: var(--space-l);
+  margin: var(--space-l);
+}
+.country-list__item {
+  display: flex;
+  flex-flow: column;
+  flex: false;
+  justify-content: false;
+  align-items: false;
+  gap: false;
+  font-size: var(--fs-500);
+  letter-spacing: var(--ls-xl);
+  width: max(35ch, 15%);
+  border-radius: var(--br-none) var(--br-none) var(--br-s) var(--br-s);
+  background-color: var(--clr-bg-neutral-light);
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+.country-list__flag {
+  width: 100%;
+  aspect-ratio: 1.75;
+  object-fit: cover;
+  border-radius: var(--br-s) var(--br-s) var(--br-none) var(--br-none);
+}
+.country-list__data {
+  display: flex;
+  flex-flow: column;
+  flex: false;
+  justify-content: flex-end;
+  align-items: false;
+  gap: false;
+  padding-inline: var(--space-m);
+  padding-block-start: var(--space-m);
+  padding-block-end: var(--space-l);
+}
+.country-list__data--bold {
+  font-weight: var(--fw-600);
+}
+.country-list__name {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-600);
+  line-height: var(--lh-xxs);
+  padding-block-end: var(--space-m);
+}
+
+.search-bar {
+  display: flex;
+  flex-flow: false;
+  flex: 3;
+  justify-content: false;
+  align-items: center;
+  gap: var(--space-m);
+  color: var(--clr-txt-neutral-dark);
+  background-color: var(--clr-bg-neutral-light);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-600);
+  margin-block-start: var(--space-xl);
+  padding: var(--space-m);
+  border-radius: var(--br-m);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filter {
+  display: flex;
+  flex-flow: false;
+  flex: false;
+  justify-content: false;
+  align-items: center;
+  gap: var(--space-m);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-600);
+  margin-block-start: var(--space-xl);
+  padding: var(--space-m);
+  border-radius: var(--br-m);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+.filter__select {
+  position: relative;
+  width: 15rem;
+}
+.filter__select.active .filter__options {
+  display: block;
+}
+.filter__select-trigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.filter__options {
+  position: absolute;
+  top: 200%;
+  left: calc(-1 * var(--space-m));
+  width: calc(100% + 2 * var(--space-m));
+  padding: var(--space-m);
+  border-radius: var(--br-m);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+.filter__option {
+  cursor: pointer;
+}
+
+.light {
+  background-color: var(--clr-bg-neutral-medium);
+  color: var(--clr-txt-primary-dark);
+}
+
+.dark {
+  background-color: var(--clr-bg-primary-medium);
+  color: var(--clr-txt-neutral-light);
+}
+
+:is(.country-list__item,
+.header,
+.search-bar,
+.filter,
+.filter__options,
+.detail,
+.detail__button,
+.detail__border-name).light {
+  background-color: var(--clr-bg-neutral-light);
+}
+
+:is(.search-bar,
+.filter,
+.filter__options).light {
+  color: var(--clr-txt-neutral-dark);
+}
+
+:is(.country-list__item,
+.header,
+.search-bar,
+.filter,
+.filter__options,
+.detail__button,
+.detail__border-name).dark {
+  background-color: var(--clr-bg-primary-light);
+}
+
+:is(.detail,
+.detail__wrapper).dark {
+  background-color: var(--clr-bg-primary-medium);
+}
+
+.detail {
+  margin: var(--space-xl);
+}
+.detail__button {
+  display: flex;
+  flex-flow: row wrap;
+  flex: false;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+  margin-block: var(--space-xxl) var(--space-3xl);
+  width: 7rem;
+  font-size: var(--fs-600);
+  padding: 0.1rem;
+  border-radius: var(--br-xs);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+.detail__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(33.3333333333% - var(--space-xxl), (var(--measure-longform) * 3 - var(--space-xxl) * 2 - 100%) * 999, 100%), 1fr));
+  gap: var(--space-xxl);
+}
+.detail__data-wrapper-1, .detail__data-wrapper-2 {
+  align-self: flex-end;
+  line-height: var(--lh-3xl);
+  font-size: var(--fs-600);
+}
+.detail__flag-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detail__flag {
+  width: 100%;
+}
+.detail__country-name {
+  font-size: var(--fs-800);
+  font-weight: var(--fw-900);
+  letter-spacing: var(--ls-l);
+  margin-block-end: var(--space-m);
+}
+.detail__info--bold {
+  font-weight: var(--fw-600);
+}
+.detail__border-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  flex: false;
+  justify-content: false;
+  align-items: false;
+  gap: false;
+}
+.detail__border-countries {
+  display: flex;
+  flex-flow: row wrap;
+  flex: false;
+  justify-content: false;
+  align-items: false;
+  gap: var(--space-s);
+}
+.detail__border-title {
+  display: inline-block;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-700);
+  margin-block-end: var(--space-m);
+}
+.detail__border-name {
+  font-size: var(--fs-500);
+  padding: 0.2em 1.25em;
+  letter-spacing: var(--ls-xl);
+  border-radius: var(--br-xs);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (min-width: 1201px) {
+  .detail__flag-wrapper {
+    grid-row: span 2;
+  }
+  .detail__border-wrapper {
+    grid-column: 2/4;
+  }
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,15 @@
+@use '../globals/variables' as *;
+@use '../globals/config' as *;
+
+
+.search-bar {
+    @include flexbox($flex: 3, $align-items: center, $gap: var(--space-m));
+    color: var(--clr-txt-neutral-dark);
+    background-color: var(--clr-bg-neutral-light);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-600);
+    margin-block-start: var(--space-xl);
+    padding: var(--space-m);
+    border-radius: var(--br-m);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.05);
+}
