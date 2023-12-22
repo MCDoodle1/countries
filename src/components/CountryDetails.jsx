@@ -3,15 +3,34 @@ import { useParams, useNavigate } from 'react-router-dom';
 import useBackButton from '../hooks/useBackButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import useFetchData from '../hooks/useFetchData';
+import { useEffect } from 'react';
 
 
-const CountryDetails = ( { data, theme, mapCountryCodeToName } ) => {
+const CountryDetails = ( { theme, mapCountryCodeToName } ) => {
   
   const { countryName } = useParams(); // This relates to the route in App.jsx
-  const country = data.filter((item) => item.name.common === countryName)[0];
+  const { initialData } = useFetchData('https://restcountries.com/v3.1/all')
   const goBack = useBackButton();  
   const navigate = useNavigate();
   
+  /*
+  The useEffect is necessary to render the border countries details after the search bar is 
+  used. Without it, the Country Details will not render because the details are not mounted
+   */
+  useEffect(() => {
+    const fetchAdditionalDetails = async () => {
+        const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+        if (!response.ok) {
+          console.error(`Failed to fetch data: ${response.status}`);
+        return; 
+    }};
+
+    fetchAdditionalDetails();
+  }, [countryName]);
+
+  const country = initialData.find((item) => item.name.common === countryName);
+
   return (
  
     <div className={`detail ${theme}`} >

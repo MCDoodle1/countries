@@ -9,11 +9,15 @@
     background-color: var(--clr-bg-neutral-light);
     padding: var(--space-l);
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.05);
-  
 
+    &__title {
+      cursor: pointer;
+    }
+  
     &__button {
       @include flexbox($align-items: center, $gap: var(--space-s));
       font-size: var(--fs-500);
       font-weight: var(--fw-600);
+      cursor: pointer;
     }
 }

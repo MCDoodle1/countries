@@ -6,6 +6,7 @@ import Searchbar from './components/Searchbar';
 import Filter from './components/Filter';
 import CountryDetails from './components/CountryDetails';
 import useFetchData from './hooks/useFetchData';
+import useScrollToTop from './hooks/useScrollToTop';
 import './sass/styles.css';
 
 
@@ -19,11 +20,12 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const location = useLocation();
   
+  useScrollToTop()
   
-  // Handles inisital data fetching from API
+  // Handles initial data fetching from API
   useEffect(() => {
-    if (Object.keys(initialData).length > 0) {
-        setFilteredData(initialData)
+    if (initialData.length > 0) {
+      setFilteredData(initialData);
     }
   }, [initialData]);
 
@@ -65,11 +67,7 @@ function App() {
   };
 
   const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light')
-    }
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
   // Map 3-digit country codes to country names
@@ -97,7 +95,7 @@ function App() {
           setIsOpen={setIsOpen}/>}
       </div>
         
-        {loading && <p>Loading...</p>}
+        {loading && <h1>Loading...</h1>}
         {error && <p>There was an error loading the country names</p>}
         {!loading && !error && (
         <Routes>
