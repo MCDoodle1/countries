@@ -7,7 +7,7 @@ const useBackButton = () => {
     navigate(-1);
     setTimeout(() => {
       window.scrollTo(0, 0);
-    }, 20);
+    }, 50);
   };
 
   return goBack;
