@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Page](https://mcdoodle1.github.io/countries/)
+- Solution URL: [GitHub Page](https://github.com/MCDoodle1/countries)
 - Live Site URL: [Rest Countries API Live Site](https://mcdoodle1.github.io/countries/)
 
 ## My process
